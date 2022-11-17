@@ -5,6 +5,8 @@ import { categories } from "./shared/categoryItemsConfig";
 import Items from "./components/Items";
 
 function App() {
+  const [items, setItems] = useState(menu);
+
   return (
     <main>
       <section className="menu section">
@@ -16,7 +18,7 @@ function App() {
           <Buttons categories={categories} />
         </div>
         <div className="section-center">
-          <Items />
+          <Items items={items} />
         </div>
       </section>
     </main>
