@@ -1,9 +1,9 @@
 import React from "react";
 import menu from "../data";
-
 function Items() {
   return menu.map((item) => {
     const { id, desc, img, price, title } = item;
+
     return (
       <article id={id} className="menu-item">
         <img src={img} alt={title} />
