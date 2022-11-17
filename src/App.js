@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Buttons from "./components/Buttons";
 import menu from "./data";
 import { categories } from "./shared/categoryItemsConfig";
 import Items from "./components/Items";
+import filterItems from "./shared/fliter";
 
 function App() {
-  const [items, setItems] = useState(menu);
+  useEffect(() => {
+    filterItems(menu);
+  }, []);
 
   return (
     <main>
@@ -18,7 +21,7 @@ function App() {
           <Buttons categories={categories} />
         </div>
         <div className="section-center">
-          <Items items={items} />
+          <Items items={menu} />
         </div>
       </section>
     </main>
