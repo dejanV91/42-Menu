@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import Buttons from "./components/Buttons";
 import menu from "./data";
 import { categories } from "./shared/categoryItemsConfig";
+import Items from "./components/Items";
 
 function App() {
-  const [data, setData] = useState(menu);
-
   return (
     <main>
       <section className="menu section">
@@ -14,9 +13,11 @@ function App() {
           <div className="underline"></div>
         </div>
         <div className="btn-container">
-          {<Buttons categories={categories} />}
+          <Buttons categories={categories} />
         </div>
-        <div className="section-center"></div>
+        <div className="section-center">
+          <Items />
+        </div>
       </section>
     </main>
   );
