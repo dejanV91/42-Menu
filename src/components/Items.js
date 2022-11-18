@@ -5,7 +5,7 @@ function Items({ items }) {
     const { id, desc, img, price, title } = item;
 
     return (
-      <article id={id} className="menu-item">
+      <article key={id} className="menu-item">
         <img className="photo" src={img} alt={title} />
         <div className="item-info">
           <header>

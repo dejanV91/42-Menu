@@ -1,5 +1,3 @@
-import React from "react";
-
 function Buttons({ categories, filterItems }) {
   return categories.map((buttonName) => (
     <button

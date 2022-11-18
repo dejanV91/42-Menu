@@ -11,11 +11,11 @@ function App() {
     const buttonName = e.target.getAttribute("name");
     if (buttonName === "all") {
       setItems(menu);
-      return menu;
+      return items;
     } else {
       const newMenu = menu.filter((item) => buttonName === item.category);
       setItems(newMenu);
-      return newMenu;
+      return items;
     }
   };
 
