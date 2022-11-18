@@ -1,7 +1,6 @@
 import React from "react";
-import filterItems from "../shared/fliter";
 
-function Buttons({ categories }) {
+function Buttons({ categories, filterItems }) {
   return categories.map((buttonName) => (
     <button
       type="button"

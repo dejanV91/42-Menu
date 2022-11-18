@@ -1,14 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import Buttons from "./components/Buttons";
 import menu from "./data";
 import { categories } from "./shared/categoryItemsConfig";
 import Items from "./components/Items";
-import filterItems from "./shared/fliter";
 
 function App() {
-  useEffect(() => {
-    filterItems(menu);
-  }, []);
+  const [items, setItems] = useState(menu);
+
+  const filterItems = (e) => {
+    const buttonName = e.target.getAttribute("name");
+    if (buttonName === "all") {
+      setItems(menu);
+      return menu;
+    } else {
+      const newMenu = menu.filter((item) => buttonName === item.category);
+      setItems(newMenu);
+      return newMenu;
+    }
+  };
 
   return (
     <main>
@@ -18,10 +27,10 @@ function App() {
           <div className="underline"></div>
         </div>
         <div className="btn-container">
-          <Buttons categories={categories} />
+          <Buttons categories={categories} filterItems={filterItems} />
         </div>
         <div className="section-center">
-          <Items items={menu} />
+          <Items items={items} />
         </div>
       </section>
     </main>
